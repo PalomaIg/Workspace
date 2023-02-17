@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="index.js"></script>
+    <!-- La fuente es un link desde google fonts por lo tanto para ver bien el diseño tiene que estar conectado a internet, sino saldrá Verdana fuente que he puesto secundaria -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;500;700&family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+    <title>FORM BEJOB</title>
+</head>
+    <body>
+        <main> <!-- ELEMENTO PRINCIPAL Y CONTENEDOR DEL FORM -->
+            <form>
+                <h1>Create Account</h1>
+                <label for="nombre">Nombre</label>
+                <img id="imgNombreC" src="images/success-icon.svg" alt="imagenCorrecto" class="imgInput">
+                <img id="imgNombreE" src="images/error-icon.svg" alt="imagenError" class="imgInput">
+                <!-- EN EL INPUT DEL NOMBRE INDICAMOS QUE CUANDO TECLEEMOS BLOQUEE LOS CÓDIGO ASCII RELACIONADOS A NÚMEROS, INDICAMOS RANGO DE CÓDIGO ASCII PERMITIDO -->
+                <input type="text" id="nombre"  onkeypress="return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122))" required/><br />
+                <h2 id="mensajeNombre">Rellene este campo</h2>
+                <label for="email">Email</label>
+                <img id="imgEmailC" src="images/success-icon.svg" alt="imagenCorrecta" class="imgInput">
+                <img id="imgEmailE" src="images/error-icon.svg" alt="imagenError" class="imgInput">
+                <input type="email" id="email" required/><br />
+                <h2 id="mensajeEmail">Rellene este campo</h2>
+                <label for="clave">Clave</label>
+                <img id="imgClaveC" src="images/success-icon.svg" alt="imagenCorrecta" class="imgInput">
+                <img id="imgClaveE" src="images/error-icon.svg" alt="imagenError" class="imgInput">
+                <input type="password" id="clave" minlength="8" required/><br />
+                <h2 id="mensajeClave">Rellene este campo</h2>
+                <label for="clave2">Confirme su clave</label>
+                <img id="imgClave2C" src="images/success-icon.svg" alt="imagenCorrecta" class="imgInput">
+                <img id="imgClave2E" src="images/error-icon.svg" alt="imagenError" class="imgInput">
+                <input type="password" id="clave2" minlength="8" required/>
+                <h2 id="mensajeClave2">Rellene este campo</h2>
+                <br /><br />
+                <button id="boton" type="submit" onclick="validar(event)">ENVIAR</button>
+            </form>
+        </main>
+    </body>
+</html>
+<script>
+    // INPUTS
+    var nombre = document.getElementById('nombre');
+    var email = document.getElementById('email');
+    var clave = document.getElementById('clave');
+    var clave2 = document.getElementById('clave2');
+
+    // ELEMENTOS H
+    var nombreH = document.getElementById('mensajeNombre');
+    var emailH = document.getElementById('mensajeEmail');
+    var claveH = document.getElementById('mensajeClave');
+    var clave2H = document.getElementById('mensajeClave2');
+
+    // ELEMENTOS IMG
+    var iNombreC = document.getElementById('imgNombreC');
+    var iEmailC = document.getElementById('imgEmailC');
+    var iClaveC = document.getElementById('imgClaveC');
+    var iClave2C = document.getElementById('imgClave2C');
+
+    var iNombreE = document.getElementById('imgNombreE');
+    var iEmailE = document.getElementById('imgEmailE');
+    var iClaveE = document.getElementById('imgClaveE');
+    var iClave2E = document.getElementById('imgClave2E');
+</script>

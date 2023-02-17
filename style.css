@@ -1,0 +1,128 @@
+@charset "utf-8";
+* {
+    box-sizing: border-box;
+}
+/* Es importante poner el box-sizing: border-box porque hace que a la anchura
+de width se le sume al redimensionamiento de la caja  */
+
+/* --------------- EL HACK CLEARFIX PARA LOS FLOTES --------------- */
+.clear:before, .clear:after {
+    content: "";
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.clear {
+    zoom: 1; /* Para IE 6/7 (por si las moscas) */
+}
+
+
+html {
+    
+    font-family: 'Be Vietnam Pro', Verdana, Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#1a1d25, #242933, #1a1d25);
+}
+
+main{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    background-color: #2F3644;
+    border: 2px solid rgba(62, 69, 87, 0.9 );
+    border-radius: 4px;
+    max-width: 360px;
+    width: 100%;
+    height: auto;
+    padding: 10px 30px 30px;
+    margin: 10px;
+}
+
+/* CREATE ACCOUNT */
+h1{
+    font-weight: 700;
+    font-size: x-large;
+    color: #ACBAE1;
+    margin: 25px 0 30px;
+}
+
+/* MENSAJES PERSONALIZADOS DE ERROR */
+h2{
+    font-size: small;
+    font-weight: 300;
+    color: #DB5A5A;
+    margin: 4px 0 8px;
+    opacity: 0;
+}
+
+/* NOMBRE QUE PRECEDE ANTES DE CADA INPUT */
+label{
+    font-size: smaller;
+    color: #8990a4;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input{
+    padding: 10px 28px 8px 10px;
+    width: 100%;
+    height: 37px;
+    border-radius: 3px;
+    border: 0;
+}
+
+/* CUANDO EL INPUT TIENE EL FOCO QUITAMOS ESTILO */
+input:focus-visible{
+    outline: none;
+}
+
+/* CLASE CON EL ESTILO DEL INPUT SI ES CORRECTO */
+.correcto{
+    border: 3px solid #4eca64;
+    height: 41px;
+}
+
+/* CLASE CON EL ESTILO DEL INPUT SI ES ERROR */
+.error{
+    border: 3px solid #DB5A5A;
+    height: 41px;
+}
+
+/* CLASE CON EL ESTILO PARA TODAS LAS IMÁGENES */
+.imgInput{
+    position: relative;
+    float: right;
+    width: 17px;
+    margin: 12px 8px -29px;
+    opacity: 0;
+}
+
+button{
+    display: block;
+    width: 100%;
+    padding: 12px 10px;
+    border-radius: 3px;
+    margin: -40px 0 0;
+    background: #6C63FF;
+    color: white;
+    font-size: small;
+}
+
+/* ESTILO DEL BOTÓN CUANDO SE PULSA */
+button:active{
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
